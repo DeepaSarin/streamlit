@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1kdQqZ7ygcQb4-zHx1h5-gvxqxRObRU9F
 """
 
-!pip install Transformers
+#!pip install Transformers
 
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 import torch
