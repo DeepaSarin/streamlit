@@ -26,7 +26,7 @@ def load_file():
 if __name__ == "__main__":
 
     # App title and description
-    st.title("Answering questions from text")
+    st.title("Answering questions using BERT")
     st.write("Upload text, pose questions, get answers")
 
     # Load file
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         question_answerer = pipeline('question-answering')
 
         answer = ''
-        question = st.text_input('Ask a question')
+        question = st.text_input('Ask a question from above text')
 
         if question != '' and raw_text != '':
             answer = question_answerer({
