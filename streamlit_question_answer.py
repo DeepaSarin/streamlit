@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # App title and description
     st.title("Answering questions using BERT")
-    st.write("Upload text, pose questions, get answers")
+    st.write("Use cases : 1.Chatbot 2. Information Retreival from a large business corpus ")
 
     # Load file
     raw_text = load_file()
