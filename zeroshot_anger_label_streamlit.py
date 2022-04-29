@@ -17,8 +17,9 @@ from transformers import pipeline
 user_input=st.text_area("Enter the sentence here")
 user_labels=st.text_input("Enter the labels seperated by comma")
 user_label_split=user_labels.split(',')
+st.write("The labels selected are ",user_label_split)
 
 classifier = pipeline("zero-shot-classification")
 #classifier(user_input, user_label_split,multi_class=True)
-st.write(classifier(user_input, user_label_split,multi_class=True))
+#st.write(classifier(user_input, user_label_split,multi_class=True))
 
