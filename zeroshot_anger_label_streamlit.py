@@ -17,17 +17,21 @@ def input_data():
     user_input=st.text_input("Enter the sentence here")
     return user_input
 @st.cache
+def zero_shot(user_input,user_label_split):
+    classifier = pipeline("zero-shot-classification")
+    st.write("success")
+    result=classifier(user_input, user_label_split,multi_class=True)
+    st.write(result)
+
 if __name__ == "__main__":
     st.title("Automatic Data Labelling")
     st.write("Zero-shot classification for automatic Data Labelling")
     user_input=input_data()
 
     user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
+    zero_shot(user_input,user_label_split)
 
     # App title and description
     
-    classifier = pipeline("zero-shot-classification")
-    st.write("success")
-    result=classifier(user_input, user_label_split,multi_class=True)
-    st.write(result)
+    
 
