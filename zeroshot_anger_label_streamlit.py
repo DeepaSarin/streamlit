@@ -26,13 +26,15 @@ def zero_shot(user_input,user_label_split):
     classifier=get_pipeline()
     result=classifier(user_input, user_label_split,multi_class=True)
     st.write(result)
+def main():
+    user_input=input_data()
+    user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
+    zero_shot(user_input,user_label_split)
 
 if __name__ == "__main__":
     st.title("Automatic Data Labelling")
     st.write("Zero-shot classification for automatic Data Labelling")
-    user_input=input_data()
-    user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
-    zero_shot(user_input,user_label_split)
+    
 
     # App title and description
     
