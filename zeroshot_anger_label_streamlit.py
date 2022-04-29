@@ -19,7 +19,5 @@ user_labels=st.text_area("                 ","Enter the labels seperated by comm
 user_label_split=user_labels.split(',')
 
 classifier = pipeline("zero-shot-classification")
-user_labels = ["politics", "public health", "economics"]
-
-classifier(user_input, user_labels,multi_class=True)
+classifier(user_input, user_label_split,multi_class=True)
 
