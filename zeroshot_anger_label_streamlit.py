@@ -15,11 +15,14 @@ import streamlit as st
 from transformers import pipeline
 
 user_input=st.text_area("Enter the sentence here")
-# user_labels=st.text_input("Enter the labels seperated by comma")
-# user_label_split=user_labels.split(',')
-# st.write("The labels selected are ",user_label_split)
-user_label_split=['sad','happy']
-classifier = pipeline("zero-shot-classification")
-classifier(user_input, user_label_split,multi_class=True)
-st.write(classifier(user_input, user_label_split,multi_class=True))
+
+user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
+if __name__ == "__main__":
+
+    # App title and description
+    st.title("Answering questions from text")
+    st.write("Upload text, pose questions, get answers")
+    classifier = pipeline("zero-shot-classification")
+    result=classifier(user_input, user_label_split,multi_class=True)
+    st.write(result)
 
