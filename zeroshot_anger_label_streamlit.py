@@ -16,10 +16,14 @@ from transformers import pipeline
 def input_data():
     user_input=st.text_input("Enter the sentence here")
     return user_input
-@st.cache(allow_output_mutation=True)
-def zero_shot(user_input,user_label_split):
+@st.cache
+def get_pipeline():
     classifier = pipeline("zero-shot-classification")
+    return classifier
+
+def zero_shot(user_input,user_label_split):
     st.write("success")
+    classifier=get_pipeline()
     result=classifier(user_input, user_label_split,multi_class=True)
     st.write(result)
 
@@ -27,7 +31,6 @@ if __name__ == "__main__":
     st.title("Automatic Data Labelling")
     st.write("Zero-shot classification for automatic Data Labelling")
     user_input=input_data()
-
     user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
     zero_shot(user_input,user_label_split)
 
