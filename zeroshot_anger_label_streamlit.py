@@ -34,7 +34,7 @@ def main():
 if __name__ == "__main__":
     st.title("Automatic Data Labelling")
     st.write("Zero-shot classification for automatic Data Labelling")
-    
+    main()
 
     # App title and description
     
