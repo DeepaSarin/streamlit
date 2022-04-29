@@ -13,16 +13,19 @@ Original file is located at
 
 import streamlit as st
 from transformers import pipeline
-
-
-if __name__ == "__main__":
+def input_data():
     user_input=st.text_input("Enter the sentence here")
+    return user_input
+@st.cache
+if __name__ == "__main__":
+    st.title("Automatic Data Labelling")
+    st.write("Zero-shot classification for automatic Data Labelling")
+    user_input=input_data()
 
     user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
 
     # App title and description
-    st.title("Automatic Data Labelling")
-    st.write("Zero-shot classification for automatic Data Labelling")
+    
     classifier = pipeline("zero-shot-classification")
     st.write("success")
     result=classifier(user_input, user_label_split,multi_class=True)
