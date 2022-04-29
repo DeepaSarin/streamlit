@@ -16,7 +16,7 @@ from transformers import pipeline
 def input_data():
     user_input=st.text_input("Enter the sentence here")
     return user_input
-@st.cache
+@st.cache(allow_output_mutation=True)
 def zero_shot(user_input,user_label_split):
     classifier = pipeline("zero-shot-classification")
     st.write("success")
