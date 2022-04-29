@@ -14,8 +14,8 @@ Original file is located at
 import streamlit as st
 from transformers import pipeline
 
-user_input=st.text_area("                ","Enter the sentence here")
-user_labels=st.text_area("                 ","Enter the labels seperated by comma")
+user_input=st.text_area("Enter the sentence here")
+user_labels=st.text_input("Enter the labels seperated by comma")
 user_label_split=user_labels.split(',')
 
 classifier = pipeline("zero-shot-classification")
