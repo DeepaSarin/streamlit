@@ -16,14 +16,15 @@ from transformers import pipeline
 
 
 if __name__ == "__main__":
-    user_input=st.text_area("Enter the sentence here")
+    user_input=st.text_input("Enter the sentence here")
 
     user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
 
     # App title and description
-    st.title("Answering questions from text")
-    st.write("Upload text, pose questions, get answers")
+    st.title("Automatic Data Labelling")
+    st.write("Zero-shot classification for automatic Data Labelling")
     classifier = pipeline("zero-shot-classification")
+    st.write("success")
     result=classifier(user_input, user_label_split,multi_class=True)
     st.write(result)
 
