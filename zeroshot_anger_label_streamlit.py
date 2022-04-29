@@ -14,10 +14,11 @@ Original file is located at
 import streamlit as st
 from transformers import pipeline
 
-user_input=st.text_area("Enter the sentence here")
 
-user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
 if __name__ == "__main__":
+    user_input=st.text_area("Enter the sentence here")
+
+    user_label_split=['sad','happy','angry','disappointmet','annoyed','excited','satisfied']
 
     # App title and description
     st.title("Answering questions from text")
