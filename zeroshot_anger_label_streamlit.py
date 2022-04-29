@@ -19,5 +19,6 @@ user_labels=st.text_input("Enter the labels seperated by comma")
 user_label_split=user_labels.split(',')
 
 classifier = pipeline("zero-shot-classification")
-classifier(user_input, user_label_split,multi_class=True)
+#classifier(user_input, user_label_split,multi_class=True)
+st.write(classifier(user_input, user_label_split,multi_class=True))
 
