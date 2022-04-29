@@ -18,7 +18,7 @@ def input_data():
     return user_input
 @st.cache
 def get_pipeline():
-    classifier = pipeline("zero-shot-classification")
+    classifier = pipeline("zero-shot-classification",model = "facebook/bart-large-mnli")
     return classifier
 
 def zero_shot(user_input,user_label_split):
