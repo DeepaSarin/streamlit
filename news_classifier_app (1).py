@@ -8,8 +8,8 @@ Original file is located at
 """
 ! pip install transformers==2.4.1
 !pip install --upgrade pip
-
-#!pip install streamlit
+!pip install rust
+! pip install streamlit
 
 
 
