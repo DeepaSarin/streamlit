@@ -7,6 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/13kg-I6ZqBeH8Zm4QFyHninb9-zcMfJko
 """
 ! pip install transformers==2.4.1
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn import preprocessing
 from tokenizers import Tokenizer
 !pip install --upgrade pip
 !pip install rust
