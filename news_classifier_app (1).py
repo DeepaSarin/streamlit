@@ -35,7 +35,7 @@ classifier = pickle.load(pickle_in)
 def predict_news_category(News):
     Tfidf_vect = TfidfVectorizer(max_features=5000)
     News_tr=Tfidf_vect.transform([News])
-    prediction=(Encoder.inverse_transform(Naive.predict(News_tr))[0])
+    prediction=((Naive.predict(News_tr))[0])
     print(prediction)
     return prediction  
     
