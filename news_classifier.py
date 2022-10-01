@@ -14,10 +14,19 @@ Original file is located at
     https://colab.research.google.com/drive/13kg-I6ZqBeH8Zm4QFyHninb9-zcMfJko
 """
 #! pip install transformers==2.4.1
+# Install with:
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+export PATH="$HOME/.cargo/bin:$PATH"
+git clone https://github.com/huggingface/tokenizers
+cd tokenizers/bindings/python
+# Install `tokenizers` in the current virtual env
+pip install setuptools_rust
+python setup.py install
 from sklearn.feature_extraction.text import TfidfVectorizer
 #from sklearn import preprocessing
 #from tokenizers import Tokenizer
 #!pip install --upgrade pip
+
 !pip install rust
 ! pip install streamlit
 
